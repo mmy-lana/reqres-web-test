@@ -1,70 +1,201 @@
-# Getting Started with Create React App
+# Reqres Web Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application for managing users, built using the [Reqres](https://reqres.in/) fake API. This project demonstrates user authentication, CRUD operations, and pagination.
 
-## Available Scripts
+**Live Demo:** [https://reqres-web-test.vercel.app/](https://reqres-web-test.vercel.app/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **User Authentication**:
+  - Login with email and password.
+  - Logout functionality.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Management**:
+  - View a list of users with pagination.
+  - Create new users.
+  - Update existing users.
+  - Delete users.
+  - View user details.
 
-### `npm test`
+- **Responsive Design**:
+  - Works seamlessly on desktop and mobile devices.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Notifications**:
+  - Success and error notifications for user actions.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**:
+  - React
+  - React Router for navigation
+  - Axios for API requests
+  - CSS for styling
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Deployment**:
+  - Vercel for hosting
 
-### `npm run eject`
+- **API**:
+  - [Reqres](https://reqres.in/) (fake REST API for testing)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/reqres-web-test.git
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Navigate to the project directory:
+   ```bash
+   cd reqres-web-test
+   ```
 
-### Code Splitting
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-### Analyzing the Bundle Size
+5. Open your browser and visit:
+   ```
+   http://localhost:3000
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is deployed on Vercel. To deploy your own version:
 
-### Advanced Configuration
+1. Fork this repository.
+2. Sign up for Vercel (if you don't have an account).
+3. Create a new project on Vercel and import the forked repository.
+4. Follow the deployment instructions. Vercel will automatically detect the React app and deploy it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## API Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project uses the Reqres fake API for testing. Below are the endpoints used:
 
-### `npm run build` fails to minify
+### Login:
+```http
+POST /api/login
+```
+**Request Body:**
+```json
+{
+  "email": "eve.holt@reqres.in",
+  "password": "cityslicka"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Get Users:
+```http
+GET /api/users?page=1
+```
+
+### Create User:
+```http
+POST /api/users
+```
+**Request Body:**
+```json
+{
+  "name": "morpheus",
+  "job": "leader"
+}
+```
+
+### Update User:
+```http
+PUT /api/users/:id
+```
+**Request Body:**
+```json
+{
+  "name": "morpheus",
+  "job": "zion resident"
+}
+```
+
+### Delete User:
+```http
+DELETE /api/users/:id
+```
+
+---
+
+## Folder Structure
+```
+reqres-web-test/
+├── public/                  # Static assets
+├── src/
+│   ├── components/          # Reusable components (e.g., UserCard, Pagination)
+│   ├── pages/               # Page components (e.g., Login, Dashboard)
+│   ├── services/            # API service functions
+│   ├── App.js               # Main application component
+│   ├── index.js             # Entry point
+├── package.json             # Project dependencies
+├── README.md                # Project documentation
+```
+
+---
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+## Acknowledgments
+
+- Reqres for providing the fake API.
+- Vercel for free hosting and deployment.
+
+---
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out:
+
+- **Email:** your-email@example.com
+- **GitHub:** [your-username](https://github.com/your-username)
+
