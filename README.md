@@ -19,9 +19,6 @@ A React-based web application for managing users, built using the [Reqres](https
   - Delete users.
   - View user details.
 
-- **Responsive Design**:
-  - Works seamlessly on desktop and mobile devices.
-
 - **Notifications**:
   - Success and error notifications for user actions.
 
