@@ -179,11 +179,6 @@ Contributions are welcome! If you'd like to contribute:
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
 
 ## Acknowledgments
 
@@ -192,10 +187,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ---
 
-## Contact
-
-If you have any questions or feedback, feel free to reach out:
-
-- **Email:** your-email@example.com
-- **GitHub:** [your-username](https://github.com/your-username)
 
