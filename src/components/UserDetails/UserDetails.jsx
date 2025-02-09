@@ -14,6 +14,9 @@ const UserDetails = ({ user }) => {
         {user.first_name} {user.last_name}
       </h3>
       <p>Email: {user.email}</p>
+      <p>
+        Job: {user.job && user.job.length > 0 ? user.job.join(", ") : "Others"}
+      </p>
     </div>
   );
 };

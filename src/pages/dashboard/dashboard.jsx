@@ -58,30 +58,11 @@ const Dashboard = () => {
   const handleEditUser = (user) => {
     setEditingUser(user);
     setUpdatedUserData({
-      name: user.first_name + " " + user.last_name,
+      first_name: user.first_name,
+      last_name: user.last_name,
       email: user.email,
-      job: user.job || "",
+      job: user.job || [],
     });
-  };
-
-  const handleUpdateUser = async () => {
-    try {
-      const { name, email, job } = updatedUserData;
-      const updatedData = {
-        name,
-        email,
-        job,
-      };
-      const updatedUser = await updateUser(editingUser.id, updatedData);
-      setUsers((prevUsers) =>
-        prevUsers.map((user) =>
-          user.id === editingUser.id ? { ...user, ...updatedUser } : user
-        )
-      );
-      setEditingUser(null);
-    } catch (err) {
-      setError("Failed to update user.");
-    }
   };
 
   const handleViewDetails = async (userId) => {
@@ -110,6 +91,31 @@ const Dashboard = () => {
     }));
   };
 
+  const handleUserCreated = (newUser) => {
+    setUsers((prevUsers) => [...prevUsers, newUser]);
+  };
+
+  const handleUpdateUser = async () => {
+    try {
+      const { first_name, last_name, email, job } = updatedUserData;
+      const updatedData = {
+        first_name,
+        last_name,
+        email,
+        job,
+      };
+      const updatedUser = await updateUser(editingUser.id, updatedData);
+      setUsers((prevUsers) =>
+        prevUsers.map((user) =>
+          user.id === editingUser.id ? { ...user, ...updatedUser } : user
+        )
+      );
+      setEditingUser(null);
+    } catch (err) {
+      setError("Failed to update user.");
+    }
+  };
+
   if (loading) {
     return <p>Loading users...</p>;
   }
@@ -122,7 +128,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <div className="dashboard-header">
         <LogoutButton />
-        <CreateUserForm />
+        <CreateUserForm onUserCreated={handleUserCreated} />
       </div>
       <h1>Welcome to Dashboard</h1>
       <h2>User List</h2>

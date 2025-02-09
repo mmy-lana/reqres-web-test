@@ -5,11 +5,20 @@
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* width: 300px; */
+}
+
+.edit-user-form h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
 }
 
 .edit-user-form label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
 }
 
 .edit-user-form input {
@@ -18,12 +27,34 @@
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 14px;
+}
+
+.edit-user-form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.job-checkboxes-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.job-checkboxes-edit label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
 }
 
 .form-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .form-actions button {
@@ -33,8 +64,17 @@
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .form-actions button:hover {
   background-color: #0056b3;
+}
+
+.form-actions button[type="button"] {
+  background-color: #6c757d;
+}
+
+.form-actions button[type="button"]:hover {
+  background-color: #5a6268;
 }
